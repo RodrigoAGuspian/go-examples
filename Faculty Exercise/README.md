@@ -5,6 +5,6 @@ In this exercise, structs are used to store information about students in progra
 
 ## Run code
 - install golang
-- input in command console: "go run ."
+- input in command console: $go run .
 
 
