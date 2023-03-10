@@ -70,8 +70,41 @@ func printProgram(program Program, number int) {
 	student.PrintAllStudents(program.Students)
 }
 
-func PrintAllPrograms(program []Program) {
+func PrintAllPrograms(programs []Program) {
 	for i := 0; i < NUM_PROG; i++ {
-		printProgram(program[i], i)
+		printProgram(programs[i], i)
 	}
+}
+
+func ProgramsInYear(programs []Program) {
+	numPrograms := 0
+	year := 1998
+	for i := 0; i < NUM_PROG; i++ {
+		if programs[i].Year == year {
+			numPrograms++
+		}
+	}
+
+	switch numPrograms {
+	case 1:
+		fmt.Printf("1 program was created in %d.\n", year)
+	default:
+		fmt.Printf("%d programs were created in %d.\n", numPrograms, year)
+	}
+
+}
+
+func CountMaleStudentsInProgram(programs []Program) {
+	var programName string
+	fmt.Println("Input Program's name for count male students: ")
+	fmt.Scanln(&programName)
+
+	for i := 0; i < NUM_PROG; i++ {
+		if programs[i].Name == programName {
+			student.PrintManyGender(programs[i].Students, 'm')
+			return
+		}
+	}
+
+	fmt.Println("The input program is not found.")
 }

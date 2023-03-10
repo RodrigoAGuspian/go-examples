@@ -36,4 +36,5 @@ func PrintFaculty(faculty Faculty) {
 	fmt.Println("-----Faculty-----")
 	fmt.Printf("Code: %d; Name: %s;\n", faculty.Code, faculty.Name)
 	program.PrintAllPrograms(faculty.Programs)
+	program.CountMaleStudentsInProgram(faculty.Programs)
 }

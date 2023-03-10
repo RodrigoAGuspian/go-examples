@@ -2,7 +2,7 @@ package student
 
 import "fmt"
 
-const NUM_STU = 2
+const NUM_STU = 3
 
 type Student struct {
 	Code     int
@@ -62,5 +62,23 @@ func printStudent(student Student) {
 func PrintAllStudents(students []Student) {
 	for i := 0; i < NUM_STU; i++ {
 		printStudent(students[i])
+	}
+
+	PrintManyGender(students, 'f')
+}
+
+func PrintManyGender(students []Student, gender rune) {
+	numGender := 0
+	for i := 0; i < NUM_STU; i++ {
+		if students[i].Gender == gender {
+			numGender++
+		}
+	}
+
+	switch gender {
+	case 'm':
+		fmt.Printf("There are so many male gender students: %d\n", numGender)
+	case 'f':
+		fmt.Printf("There are so many female gender students: %d\n", numGender)
 	}
 }
