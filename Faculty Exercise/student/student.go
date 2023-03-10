@@ -2,7 +2,7 @@ package student
 
 import "fmt"
 
-const NUM_STU = 3
+const NUM_STU = 1
 
 type Student struct {
 	Code     int
@@ -14,6 +14,7 @@ type Student struct {
 func CreateStudent(number int) Student {
 	var student Student
 
+	fmt.Printf("----Student #%d---- \n", number)
 	for {
 		fmt.Println("Input Student's code: ")
 		fmt.Scanln(&student.Code)
@@ -22,9 +23,7 @@ func CreateStudent(number int) Student {
 		} else {
 			break
 		}
-
 	}
-	fmt.Printf("----Student #%d---- \n", number)
 	fmt.Println("Input Student's name: ")
 	fmt.Scanln(&student.Name)
 	fmt.Println("Input Student's last name: ")
