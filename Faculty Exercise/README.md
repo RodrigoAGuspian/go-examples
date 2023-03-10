@@ -5,7 +5,7 @@ In this exercise, structs are used to store information about students in progra
 
 ## Run code
 - install golang
----
+- ```
 $go run .
----
+```
 
