@@ -2,7 +2,7 @@ package student
 
 import "fmt"
 
-const NUM_STU = 1
+const NUM_STU = 2
 
 type Student struct {
 	Code     int
@@ -11,7 +11,7 @@ type Student struct {
 	Gender   rune
 }
 
-func CreateStudent(number int) Student {
+func createStudent(number int) Student {
 	var student Student
 
 	fmt.Printf("----Student #%d---- \n", number)
@@ -46,14 +46,14 @@ func CreateAllStudents() []Student {
 	var students []Student
 
 	for i := 0; i < NUM_STU; i++ {
-		students = append(students, CreateStudent(i))
+		students = append(students, createStudent(i))
 	}
 
 	return students
 
 }
 
-func PrintStudent(student Student) {
+func printStudent(student Student) {
 	fmt.Printf("Code: %d; Name: %s; Last Name: %s; Gender: %c;\n",
 		student.Code, student.Name, student.LastName, student.Gender)
 
@@ -61,6 +61,6 @@ func PrintStudent(student Student) {
 
 func PrintAllStudents(students []Student) {
 	for i := 0; i < NUM_STU; i++ {
-		PrintStudent(students[i])
+		printStudent(students[i])
 	}
 }

@@ -13,8 +13,9 @@ type Program struct {
 }
 
 const RECENT_YEAR = 2023
+const NUM_PROG = 2
 
-func CreateProgram(number int) {
+func createProgram(number int) Program {
 	var program Program
 
 	fmt.Printf("----Program #%d---- \n", number)
@@ -45,15 +46,32 @@ func CreateProgram(number int) {
 
 	program.Students = student.CreateAllStudents()
 
-	PrintProgram(program, number)
+	//PrintProgram(program, number)
+
+	return program
 
 }
 
-func PrintProgram(program Program, number int) {
+func CreateAllPrograms() []Program {
+	var programs []Program
+
+	for i := 0; i < NUM_PROG; i++ {
+		programs = append(programs, createProgram(i))
+	}
+
+	return programs
+}
+
+func printProgram(program Program, number int) {
 
 	fmt.Printf("----Program #%d---- \n", number)
-	fmt.Printf("Code: %d; Name: %s; Year of creation: %d;\n",
-		program.Code, program.Name, program.Year)
+	fmt.Printf("Code: %d; Name: %s; Year of creation: %d;\n", program.Code, program.Name, program.Year)
 
 	student.PrintAllStudents(program.Students)
+}
+
+func PrintAllPrograms(program []Program) {
+	for i := 0; i < NUM_PROG; i++ {
+		printProgram(program[i], i)
+	}
 }

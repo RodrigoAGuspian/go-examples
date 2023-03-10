@@ -1,7 +1,7 @@
 package main
 
-import "main/program"
+import "main/faculty"
 
 func main() {
-	program.CreateProgram(1)
+	faculty.PrintFaculty(faculty.CreateFaculty())
 }
